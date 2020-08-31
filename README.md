@@ -1,2 +1,2 @@
-# tpl-b
-template-b
+# vue-template
+vue-template
