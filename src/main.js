@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2020-09-01 16:24:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 17:58:11
+ * @LastEditTime: 2020-09-02 20:00:22
  * @Description: file content
  */
 import Vue from 'vue'
@@ -40,7 +40,10 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
+{{#if isH5}}
 utils.initRem()// 初始化字体rem
+{{/if}}
+
 
 const context = new Vue({
   router,
