@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2020-09-01 16:24:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 20:00:22
+ * @LastEditTime: 2020-09-02 20:04:47
  * @Description: file content
  */
 import Vue from 'vue'
@@ -15,7 +15,9 @@ import './assets/js/common'
 import App from './App.vue'
 import router from './routers'
 import store from './store'
+{{#if isH5}}
 import utils from './assets/js/utils'
+{{/if}}
 
 Vue.prototype.$xss = DOMPurify.sanitize
 
@@ -43,7 +45,6 @@ router.beforeEach((to, from, next) => {
 {{#if isH5}}
 utils.initRem()// 初始化字体rem
 {{/if}}
-
 
 const context = new Vue({
   router,
