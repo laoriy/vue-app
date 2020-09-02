@@ -2,10 +2,10 @@
  * @Author: liuruijun
  * @Date: 2020-09-02 14:12:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 14:38:21
+ * @LastEditTime: 2020-09-02 14:39:32
  * @Description: file content
  */
-const IS_CUSTOME_UI = 'use another ui library'
+const CUSTOME_UI = 'use another ui library'
 const h5ask = [
   {
     type: 'input',
@@ -23,7 +23,7 @@ const h5ask = [
     choices: [
       'mint-ui',
       'vant',
-      IS_CUSTOME_UI
+      CUSTOME_UI
     ],
     message: 'Please choose a ui library'
   }]
@@ -45,7 +45,7 @@ const pcask = [
     choices: [
       'element-ui',
       'bootstrap',
-      IS_CUSTOME_UI
+      CUSTOME_UI
     ],
     message: 'Please choose a ui library'
   }]
@@ -53,5 +53,5 @@ const pcask = [
 module.exports = {
   h5ask,
   pcask,
-  IS_CUSTOME_UI
+  CUSTOME_UI
 }
