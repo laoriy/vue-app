@@ -2,19 +2,15 @@
  * @Author: liuruijun
  * @Date: 2020-09-01 16:24:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 11:25:57
+ * @LastEditTime: 2020-09-02 17:58:11
  * @Description: file content
- */
-/*
- * @Author: liuruijun
- * @Date: 2019-10-10 15:55:49
- * @LastAuthor: WE1ZHANTA0
- * @lastTime: 2020-07-27 10:34:37
- * @Description: main.js
  */
 import Vue from 'vue'
 import DOMPurify from 'dompurify'
 import './assets/less/reset.less'
+{{#if isH5}}
+import './assets/js/common'
+{{/if}}
 
 import App from './App.vue'
 import router from './routers'

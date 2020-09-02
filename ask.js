@@ -2,10 +2,14 @@
  * @Author: liuruijun
  * @Date: 2020-09-02 14:12:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 17:45:40
+ * @LastEditTime: 2020-09-02 18:02:19
  * @Description: file content
  */
 const CUSTOME_UI = 'use another ui library'
+const deletePath = {
+  h5: [],
+  pc: ['src/assets/js/common.js']
+}
 const h5ask = [
   {
     type: 'input',
@@ -53,5 +57,6 @@ const pcask = [
 module.exports = {
   h5ask,
   pcask,
-  CUSTOME_UI
+  CUSTOME_UI,
+  deletePath
 }

@@ -1,6 +1,7 @@
-
 /* eslint-disable */
+
 const utils  = {
+  {{#if isH5}}
   appUA: '', // app传过来的UserAgent
   /**
      * rem单位计算
@@ -50,6 +51,7 @@ const utils  = {
     recalc()
     if (!doc.addEventListener) return
   },
+  {{/if}}
   /**
      * 获取url参数
      * @param param 参数名
