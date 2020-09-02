@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2020-09-02 14:12:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 18:19:10
+ * @LastEditTime: 2020-09-02 18:27:41
  * @Description: file content
  */
 const CUSTOME_UI = 'use another ui library'
@@ -10,6 +10,7 @@ const deletePath = {
   h5: [],
   pc: ['src/assets/js/common.js', 'src/assets/less/hairline.less']
 }
+const compiles = ['js', 'json', 'vue', 'less']
 const h5ask = [
   {
     type: 'input',
@@ -58,5 +59,6 @@ module.exports = {
   h5ask,
   pcask,
   CUSTOME_UI,
-  deletePath
+  deletePath,
+  compiles
 }
