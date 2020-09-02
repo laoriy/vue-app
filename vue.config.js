@@ -3,7 +3,7 @@
  * @Author: liuruijun
  * @Date: 2019-10-10 15:55:49
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 11:14:48
+ * @LastEditTime: 2020-09-02 14:19:56
  * @Description: file content
  */
 
@@ -55,8 +55,8 @@ function addStyleResource(rule) {
     })
 }
 module.exports = {
-  publicPath: '/{{progectName}}/',
-  outputDir: './{{progectName}}',
+  publicPath: '/{{projectName}}/',
+  outputDir: './{{projectName}}',
   pwa: {}, // PWA 插件相关配置 see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
   chainWebpack: (config) => {
     config.resolve.alias

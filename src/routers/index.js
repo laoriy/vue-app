@@ -14,7 +14,7 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
   mode: 'history',
-  base: '{{progectName}}',
+  base: '{{projectName}}',
   routes: [
     {
       path: '*',
