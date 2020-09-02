@@ -23,8 +23,8 @@ export default {
 <style scoped lang="less">
   .index{
     color: @black;
-    {{#if isH5}}
-      .hairline('all',red,.5rem);
-    {{/if}}
+  {{#if isH5}}
+    .hairline('all',red,.5rem);
+  {{/if}}
   }
 </style>
