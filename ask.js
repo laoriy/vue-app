@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2020-09-02 14:12:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 15:05:24
+ * @LastEditTime: 2020-09-02 15:10:26
  * @Description: file content
  */
 const CUSTOME_UI = 'use another ui library'
@@ -14,12 +14,12 @@ const h5ask = [
   },
   {
     type: 'input',
-    name: 'description',
+    name: 'proxyIp',
     message: 'Please enter the project proxyIp'
   },
   {
     type: 'list',
-    name: 'description',
+    name: 'uiLibrary',
     choices: [
       'mint-ui',
       'vant',
@@ -36,12 +36,12 @@ const pcask = [
   },
   {
     type: 'input',
-    name: 'description',
+    name: 'proxyIp',
     message: 'Please enter the project proxyIp'
   },
   {
     type: 'list',
-    name: 'description',
+    name: 'uiLibrary',
     choices: [
       'element-ui',
       'bootstrap',
