@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2020-09-02 14:12:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 15:10:26
+ * @LastEditTime: 2020-09-02 17:45:40
  * @Description: file content
  */
 const CUSTOME_UI = 'use another ui library'
