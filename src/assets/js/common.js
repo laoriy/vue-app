@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2019-10-21 10:04:56
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-08-04 12:04:05
+ * @LastEditTime: 2020-09-03 09:52:35
  * @Description: file content
  */
 import FastClick from 'fastclick'
@@ -54,16 +54,18 @@ if (window.location.href.indexOf('wechat-group-data') === -1) {
   
   FastClick.attach(document.body)  
 }
-
+{{#if isH5}}
 //  本地环境及测试环境增加vconsole
 if (globalConfig.environment !== 'idc') {
-  var script = document.createElement ('script');
-  var style = document.createElement ('style');
-  style.appendChild (
-    document.createTextNode ('.vc-table{ line-height: 1.3; }')
+  var script = document.createElement('script');
+  var style = document.createElement('style');
+  style.appendChild(
+    document.createTextNode('.vc-table{ line-height: 1.3; }')
   );
   // vConsole v3.3.0
   script.src = '//static.huoxingplan.com/mars/20200804/0a3e695f0c5b44a5ac8fb1170cb37169.js';
-  document.body.appendChild (script);
-  document.body.appendChild (style);
+  document.body.appendChild(script);
+  document.body.appendChild(style);
 }
+{{/if}}
+

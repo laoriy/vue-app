@@ -2,11 +2,12 @@
  * @Author: liuruijun
  * @Date: 2020-09-01 16:24:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 20:04:47
+ * @LastEditTime: 2020-09-03 10:09:09
  * @Description: file content
  */
 import Vue from 'vue'
 import DOMPurify from 'dompurify'
+import './globalConfig'
 import './assets/less/reset.less'
 {{#if isH5}}
 import './assets/js/common'
