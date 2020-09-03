@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2019-10-21 10:04:56
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-03 09:52:35
+ * @LastEditTime: 2020-09-03 11:44:28
  * @Description: file content
  */
 import FastClick from 'fastclick'
@@ -54,7 +54,7 @@ if (window.location.href.indexOf('wechat-group-data') === -1) {
   
   FastClick.attach(document.body)  
 }
-{{#if isH5}}
+<% if (isH5) { %>
 //  本地环境及测试环境增加vconsole
 if (globalConfig.environment !== 'idc') {
   var script = document.createElement('script');
@@ -67,5 +67,5 @@ if (globalConfig.environment !== 'idc') {
   document.body.appendChild(script);
   document.body.appendChild(style);
 }
-{{/if}}
+<% } %>
 
