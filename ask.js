@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2020-09-02 14:12:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-02 19:01:02
+ * @LastEditTime: 2020-09-03 15:19:09
  * @Description: file content
  */
 const CUSTOME_UI = 'use another ui library'
@@ -39,7 +39,6 @@ const pcask = [
     name: 'uiLibrary',
     choices: [
       'element-ui',
-      'bootstrap',
       CUSTOME_UI
     ],
     message: 'Please choose a ui library'
