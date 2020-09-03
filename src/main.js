@@ -2,7 +2,7 @@
  * @Author: liuruijun
  * @Date: 2020-09-01 16:24:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-03 10:18:46
+ * @LastEditTime: 2020-09-03 10:20:13
  * @Description: file content
  */
 import Vue from 'vue'
@@ -13,7 +13,7 @@ import './assets/less/reset.less'
 import './assets/js/common'
 {{/if}}
 
-{{#if uiLibrary === 'mint-ui'}}
+{{#if uiLibrary EQUALS 'mint-ui'}}
 import './assets/js/common'
 {{/if}}
 
