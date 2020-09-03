@@ -2,20 +2,18 @@
  * @Author: liuruijun
  * @Date: 2020-09-01 16:24:08
  * @LastEditors: liuruijun
- * @LastEditTime: 2020-09-03 14:45:48
+ * @LastEditTime: 2020-09-03 14:56:31
  * @Description: file content
  */
 import Vue from 'vue'
 import DOMPurify from 'dompurify'
 import './globalConfig'
 import './assets/less/reset.less'
-<%if (isH5) {%>import './assets/js/common'<%}%>
-<%if (uiLibrary === 'mint-ui') {%>import './assets/js/common'<%}%>
+<% if (isH5) {%>import './assets/js/common'<% } %>
 import App from './App.vue'
 import router from './routers'
 import store from './store'
 <% if (isH5) { %>import utils from './assets/js/utils'<% } %>
-
 Vue.prototype.$xss = DOMPurify.sanitize
 
 router.beforeEach((to, from, next) => {
@@ -38,9 +36,7 @@ router.beforeEach((to, from, next) => {
   }
   next()
 })
-
 <% if (isH5) { %>utils.initRem()// 初始化字体rem<% } %>
-
 const context = new Vue({
   router,
   store,
