@@ -19,13 +19,13 @@
 ```
 // 启动命令如下
 
-yarn serve      默认端口8008，代理至http://{{proxyIp}}
+yarn serve      默认端口8008，代理至http://<%=proxyIp%>
  
 // 设置端口或代理启动(默认http协议，可以自己写协议)
 
 yarn serve -port 8000
-yarn serve -env {{proxyIp}}
-yarn serve -port 8000 -env https://{{proxyIp}}
+yarn serve -env <%=proxyIp%>
+yarn serve -port 8000 -env https://<%=proxyIp%>
 yarn serve -port 8000 -env 10.3.6.198
 
 ```

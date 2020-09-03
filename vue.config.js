@@ -12,7 +12,7 @@ const path = require('path')
 const argv = process.argv || []
 const IS_PROD = process.env.NODE_ENV === 'production'
 
-const initEnv = 'http://{{proxyIp}}' // 默认代理域名
+const initEnv = 'http://<%=proxyIp%>' // 默认代理域名
 const initPort = 8000 // 默认启动端口
 
 function setStart(type, defaultVal) {
@@ -55,8 +55,8 @@ function addStyleResource(rule) {
     })
 }
 module.exports = {
-  publicPath: '/{{projectName}}/',
-  outputDir: './{{projectName}}',
+  publicPath: '/<%=projectName%>/',
+  outputDir: './<%=projectName%>',
   pwa: {}, // PWA 插件相关配置 see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
   chainWebpack: (config) => {
     config.resolve.alias

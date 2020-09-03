@@ -11,13 +11,13 @@ function URLCONFIG(w) {
   if (hostname === 'xx.xx.com') {
     // 生产
     w.globalConfig = {
-      basePath: '{{proxyIp}}',
+      basePath: '<%=proxyIp%>',
       environment: 'idc'
     }
   } else { 
     // dev
     w.globalConfig = {
-      basePath: '{{proxyIp}}',
+      basePath: '<%=proxyIp%>',
       environment: 'dev' 
     }
   }
