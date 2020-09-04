@@ -14,7 +14,7 @@
     "fastclick": "^1.0.6",
     <% } %>
     <% if (uiLibrary) { %>
-    "<%= uiLibrary %>": "^<%= version %>",
+    "<%= uiLibrary %>": "^<%= uiVersion %>",
     <% } %>
     "vue": "^2.6.10",
     "vue-router": "^3.4.3",
