@@ -23,7 +23,7 @@ function reactive(target) {
   const handler = {
     get(target, key, receiver) {
       // 收集依赖
-      track(target, key); 
+      track(target, key);
       const result = Reflect.get(target, key, receiver);
       return convert(result);
     },
@@ -63,29 +63,81 @@ function effect(callback) {
 
 let targetMap = new WeakMap();
 function track(target, key) {
-    if(!activeEffect) return 
-    let depsMap = targetMap.get(target);
-    if(!depsMap){
-        depsMap = new Map();
-        targetMap.set(target,depsMap)
-    }
+  if (!activeEffect) return;
+  let depsMap = targetMap.get(target);
+  if (!depsMap) {
+    depsMap = new Map();
+    targetMap.set(target, depsMap);
+  }
 
-    let dep = depsMap.get(key)
-    if(!dep){
-        dep = new Set();
-        depsMap.set(key,dep)
-    }
-    dep.add(activeEffect)
+  let dep = depsMap.get(key);
+  if (!dep) {
+    dep = new Set();
+    depsMap.set(key, dep);
+  }
+  dep.add(activeEffect);
 }
 
-function trigger(target,key){
-    const depsMap = targetMap.get(target)
-    if(!depsMap) return
-    const dep = depsMap.get(key)
-    if(!dep) return
-    dep.forEach(effect => {
-        effect()
-    })
+function trigger(target, key) {
+  const depsMap = targetMap.get(target);
+  if (!depsMap) return;
+  const dep = depsMap.get(key);
+  if (!dep) return;
+  dep.forEach((effect) => {
+    effect();
+  });
 }
 
-export { reactive, effect, track };
+function ref(raw) {
+  // 判断raw 是否是ref创建的对象，如果是的话直接返回
+  if (isObject(raw) && raw.__v_isRef) {
+    return raw;
+  }
+
+  let value = convert(raw);
+
+  const r = {
+    __v_isRef: true,
+    get value() {
+      track(r, "value");
+      return value;
+    },
+    set value(newValue) {
+      if (newValue !== value) {
+        raw = newValue;
+        value = convert(raw);
+        trigger(r, "value");
+      }
+    },
+  };
+  return r;
+}
+
+function toProxyRef(proxy, key) {
+  const r = {
+    __v_isRef: true,
+    get value() {
+      return proxy[key];
+    },
+    set value(newValue) {
+      proxy[key] = newValue;
+    },
+  };
+  return r;
+}
+
+function toRefs(proxy) {
+  const ret = Array.isArray(proxy) ? new Array(proxy.length) : {};
+  for (const key in proxy) {
+    ret[key] = toProxyRef(proxy, key);
+  }
+  return ret;
+}
+
+function computed(getter) {
+  const result = ref();
+  effect(() => (result.value = getter()));
+  return result; 
+}
+
+export { reactive, effect, track, ref, toRefs, computed };
